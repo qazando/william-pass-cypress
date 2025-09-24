@@ -40,3 +40,11 @@ jobs:
           name: cypress-screenshot # Nome do artifact
           path: cypress/screenshots # Caminho onde o relatório está salvo
           retention-days: 3 # Define que o artifact expira em 3 dias
+
+      - name: Subindo video
+        if: always() # Certifique-se de que o relatório será salvo mesmo se os testes falharem
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-videos # Nome do artifact
+          path: cypress/videos # Caminho onde o relatório está salvo
+          retention-days: 3 # Define que o artifact expira em 3 dias
