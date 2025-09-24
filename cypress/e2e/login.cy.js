@@ -25,7 +25,7 @@ describe("Login", () => {
   it("Login com sucessooo", () => {
     cy.visit("https://automationpratice.com.br/login");
     cy.get("#user").type(creds.user);
-    console.log(creds.user);
+    console.log("Email está preenchido: " + creds.user);
     cy.get("#password").type(creds.password, { log: false });
     cy.get("#btnLogin").click();
   });
